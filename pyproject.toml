@@ -1,0 +1,21 @@
+[project]
+name = "sim-data-host"
+version = "0.0.1"
+description = "asyncio host for serving simulated live data"
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["localhost", "simulation"]
+authors = [
+  {name = "Artur Wegrzyn", email = "awegrzyn17@gmail.com" }
+]
+maintainers = [
+  {name = "Artur Wegrzyn", email = "awegrzyn17@gmail.com" }
+]
+dependencies = ["numpy", "pandas"]
+
+[build-system]
+requires = ["setuptools>=70.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+start_host = "sim_data_host.cli:main"
