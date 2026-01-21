@@ -10,7 +10,7 @@ from sim_data_host.constants import SECONDS_PER_DAY
 DataQueue: asyncio.Queue = asyncio.Queue()
 
 
-async def simulate_gbm(
+async def gbm_simulation(
     start_value: float = 100,
     mu_daily: float = 0.005,
     sigma_daily: float = 0.02,
