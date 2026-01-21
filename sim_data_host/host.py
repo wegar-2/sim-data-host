@@ -13,12 +13,16 @@ async def host(
         gbm_sim_config: GbmSimulationConfig,
         port: int = 9000
 ):
-    logger.info(f"")
+    logger.info(f"Starting host at {port=}")
 
     asyncio.create_task(gbm_simulation(config=gbm_sim_config))
     asyncio.create_task(broadcaster())
 
-    server = await asyncio.start_server(client_handler, host="0.0.0.0", port=port)
+    server = await asyncio.start_server(
+        client_handler,
+        host="0.0.0.0",
+        port=port
+    )
 
     async with server:
         await server.serve_forever()
